@@ -4,87 +4,167 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>池戸かばん工房｜ランドセルリメイク・革かばん</title>
-  <meta name="description" content="岐阜県多治見市の池戸かばん工房。6年間使ったランドセルを、大人が長く使える革バッグへ一点ずつ仕立てます。Instagramからご相談ください。">
+  <meta name="description" content="岐阜県多治見市の池戸かばん工房。6年間をともにしたランドセルを、これからも使い続けられる革バッグへ一点ずつ仕立てます。">
   <style>
     :root{
-      --bg:#100d0a;--paper:#f5efe4;--paper2:#fffaf1;--ink:#241912;--muted:#756757;--gold:#b78b4e;--line:#ded0bd;--deep:#1b130e;
+      --paper:#f3eadc;
+      --paper2:#fbf7ef;
+      --ink:#211812;
+      --muted:#77695b;
+      --brown:#3a271c;
+      --gold:#b88a45;
+      --line:#dccbb6;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;background:var(--paper);color:var(--ink);line-height:1.9} img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
-    .nav{position:absolute;z-index:10;top:0;left:0;right:0;padding:20px 6vw;color:#fff;display:flex;justify-content:space-between;align-items:center}.brand{font-size:22px;font-weight:700;letter-spacing:.08em;text-shadow:0 3px 18px rgba(0,0,0,.7)}.navlinks{display:flex;gap:22px;font-size:14px;letter-spacing:.08em;text-shadow:0 3px 14px rgba(0,0,0,.65)}
-    .hero{min-height:100svh;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.45) 48%,rgba(0,0,0,.18)),url("hero-randoseru.jpg") center center/cover no-repeat;display:flex;align-items:center;padding:110px 6vw 55px}.hero-inner{max-width:720px}.eyebrow{color:#d8bd8b;letter-spacing:.18em;font-size:13px;margin-bottom:14px}.hero h1{margin:0 0 18px;font-size:clamp(36px,6vw,68px);line-height:1.25;letter-spacing:.03em;text-shadow:0 5px 26px rgba(0,0,0,.8)}.hero p{margin:0 0 28px;max-width:610px;font-size:clamp(17px,2vw,22px);text-shadow:0 3px 20px rgba(0,0,0,.8)}.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-block;text-align:center;padding:14px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.88);font-weight:700;background:rgba(0,0,0,.22);color:#fff}.btn.primary{background:#fff;color:#211a14;border-color:#fff}.btn.darkbtn{background:var(--deep);color:#fff;border-color:var(--deep)}
-    section{padding:72px 6vw}.wrap{max-width:1100px;margin:auto}.narrow{max-width:840px}.center{text-align:center}h2{margin:0 0 18px;font-size:clamp(28px,4.5vw,44px);line-height:1.35;letter-spacing:.03em}h3{margin:0 0 10px;font-size:22px}.lead{margin:0;color:var(--muted);font-size:18px}.dark{background:var(--bg);color:#fff}.dark .lead{color:#d7cfc2}.grid{display:grid;gap:24px}.two{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:repeat(3,1fr)}.card{background:var(--paper2);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 14px 38px rgba(0,0,0,.09)}.dark .card{background:#fff;color:var(--ink)}.card-body{padding:24px}.badge{display:inline-block;color:var(--gold);font-weight:700;letter-spacing:.08em;font-size:13px}.price{font-size:26px;font-weight:700;color:var(--gold);margin:.2em 0}.note{color:var(--muted);font-size:15px}.story{background:#efe4d3}.list{margin:18px 0 0;padding-left:1.2em}.list li{margin:9px 0}.photo-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}.photo-card img{border-radius:26px;box-shadow:0 18px 45px rgba(0,0,0,.18)}.cta{background:#e8dac6}.footer{background:#0b0907;color:#fff;text-align:center;padding:42px 6vw}.footer p{margin:.3em 0;color:#ddd}
-    .steps{counter-reset:num}.step{position:relative;padding-left:54px}.step:before{counter-increment:num;content:counter(num);position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-weight:700}.small{font-size:14px;color:var(--muted)}
-    @media(max-width:850px){.navlinks{display:none}.hero{align-items:flex-end;background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.22) 42%,rgba(0,0,0,.88)),url("hero-randoseru.jpg") center top/cover no-repeat;padding:118px 6vw 38px}.btns{display:grid;width:100%}.two,.three,.photo-card{grid-template-columns:1fr}section{padding:58px 6vw}.brand{font-size:21px}.hero h1{font-size:36px}.hero p{font-size:16px}}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;line-height:1.9;letter-spacing:.02em}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    .nav{position:fixed;z-index:50;top:0;left:0;right:0;padding:18px 6vw;display:flex;justify-content:space-between;align-items:center;background:rgba(35,24,18,.72);backdrop-filter:blur(8px);color:#fff}
+    .brand{font-weight:700;font-size:20px;letter-spacing:.12em;white-space:nowrap}
+    .navlinks{display:flex;gap:22px;font-size:13px;letter-spacing:.12em}
+    .hero{min-height:100svh;padding:92px 6vw 48px;display:grid;align-items:center;background:linear-gradient(180deg,#2b1f18 0%,#7d613f 52%,#f3eadc 100%)}
+    .hero-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.03fr .97fr;gap:44px;align-items:center}
+    .hero-photo{border-radius:30px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);background:#d8c19a}
+    .hero-photo img{aspect-ratio:4/5;object-fit:cover}
+    .hero-copy{color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+    .eyebrow{color:#e2bd78;letter-spacing:.2em;font-size:13px;margin:0 0 16px;font-weight:700}
+    h1{font-size:clamp(38px,6vw,72px);line-height:1.25;margin:0 0 20px;letter-spacing:.04em}
+    .hero-copy p{font-size:clamp(17px,2.2vw,22px);max-width:560px;margin:0 0 28px;color:#fff8ea}
+    .btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:14px 20px;border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.88);background:rgba(0,0,0,.12);color:#fff}
+    .btn.primary{background:#fff;color:#241812;border-color:#fff}
+    section{padding:84px 6vw}
+    .wrap{max-width:1120px;margin:auto}
+    .kicker{color:var(--gold);font-weight:700;letter-spacing:.18em;margin:0 0 10px;font-size:14px}
+    h2{font-size:clamp(30px,4.5vw,50px);line-height:1.35;margin:0 0 20px;letter-spacing:.04em}
+    .lead{font-size:18px;color:var(--muted);margin:0;max-width:760px}
+    .split{display:grid;grid-template-columns:.95fr 1.05fr;gap:42px;align-items:center}
+    .photo-card{border-radius:26px;overflow:hidden;box-shadow:0 18px 48px rgba(55,35,20,.16);background:#fff}
+    .photo-card img{aspect-ratio:4/3;object-fit:cover}
+    .dark{background:#17110d;color:#fff}
+    .dark .lead{color:#d9cdbf}
+    .dark .kicker{color:#d3a35d}
+    .story-photo{border-radius:26px;overflow:hidden;box-shadow:0 18px 54px rgba(0,0,0,.28)}
+    .story-photo img{aspect-ratio:16/10;object-fit:cover}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+    .item{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(55,35,20,.12)}
+    .item img{aspect-ratio:4/5;object-fit:cover}
+    .item p{margin:0;padding:16px 18px;font-weight:700;font-size:16px}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;color:var(--ink)}
+    .num{color:var(--gold);font-weight:700;font-size:18px}
+    .pricebox{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+    .price{font-size:32px;color:var(--gold);font-weight:700;margin:0}
+    .cta{background:linear-gradient(135deg,#3a271c,#100b08);color:#fff;text-align:center}
+    .cta .lead{margin:auto;color:#e7dac7}
+    .footer{background:#080604;color:#fff;text-align:center;padding:36px 6vw;font-size:14px;color:#d9cdbf}
+    .hide-mobile{display:block}
+    @media(max-width:900px){
+      .navlinks{display:none}
+      .hero{padding-top:86px;background:linear-gradient(180deg,#2b1f18 0%,#6f5435 46%,#f3eadc 100%)}
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero-copy{order:2;color:var(--ink);text-shadow:none}.hero-copy p{color:var(--muted)}.eyebrow{color:var(--gold)}
+      .btn{color:var(--ink);border-color:var(--brown);background:transparent}.btn.primary{background:var(--brown);color:#fff;border-color:var(--brown)}
+      .split{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.pricebox{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .brand{font-size:18px}.hero{padding-left:5vw;padding-right:5vw}.hero-photo{border-radius:24px}.btns{display:grid}.btn{width:100%}
+      section{padding:64px 5vw}.gallery{grid-template-columns:1fr;gap:16px}.item img{aspect-ratio:4/3}h1{font-size:42px}
+    }
   </style>
 </head>
 <body>
 <header class="nav">
   <div class="brand">池戸かばん工房</div>
-  <nav class="navlinks"><a href="#works">制作事例</a><a href="#price">価格</a><a href="#flow">流れ</a><a href="#contact">相談</a></nav>
+  <nav class="navlinks">
+    <a href="#concept">想い</a><a href="#works">制作事例</a><a href="#flow">流れ</a><a href="#contact">相談</a>
+  </nav>
 </header>
+
 <main>
   <section class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">LANDSEL REMAKE / TAJIMI GIFU</div>
-      <h1>ランドセルを、<br>一生使いたくなる<br>革バッグへ。</h1>
-      <p>6年間の思い出を、しまい込まずに使い続ける。親の代から受け継いだ技術で、一点ずつ丁寧に仕立てます。</p>
-      <div class="btns"><a class="btn primary" href="#contact">写真を送って相談する</a><a class="btn" href="#works">制作内容を見る</a></div>
+    <div class="hero-grid">
+      <div class="hero-photo"><img src="hero-randoseru.jpg" alt="ランドセルリメイクの革バッグ"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">IKEDO KABAN KOBO / TAJIMI GIFU</p>
+        <h1>思い出を、<br>これからも<br>使い続ける。</h1>
+        <p>6年間をともにしたランドセルを、これから先も使い続けられる革バッグへ。一点ずつ丁寧に仕立てます。</p>
+        <div class="btns"><a class="btn primary" href="#works">制作事例を見る</a><a class="btn" href="https://www.instagram.com/ikedo_kaban_kobo/">Instagramで相談する</a></div>
+      </div>
     </div>
   </section>
-  <section class="story">
-    <div class="wrap photo-card">
-      <img src="hero-randoseru.jpg" alt="ランドセルリメイクで仕立てた革バッグ">
+
+  <section id="concept">
+    <div class="wrap split">
       <div>
-        <span class="badge">CONCEPT</span>
-        <h2>思い出を、<br>これからも使い続ける。</h2>
-        <p class="lead">小物に分けるだけではなく、ランドセルらしさを残しながら、大人が持てるバッグへ。傷も色つやも、その子だけの時間として活かします。</p>
+        <p class="kicker">CONCEPT</p>
+        <h2>ランドセルから、<br>大人の相棒へ。</h2>
+        <p class="lead">小物に分けるだけではなく、ランドセルらしさを残しながら、毎日使える革バッグへ。思い出をしまい込まず、これからも使える形に変えていきます。</p>
+      </div>
+      <div class="photo-card"><img src="workshop.png" alt="池戸かばん工房の工房風景"></div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap split">
+      <div class="story-photo"><img src="hands-sewing.jpg" alt="ミシンで革を縫う制作風景"></div>
+      <div>
+        <p class="kicker">HAND WORK</p>
+        <h2>一つひとつ、<br>手仕事で仕立てています。</h2>
+        <p class="lead">親の代から受け継いだ技術で、革の状態を見ながら制作します。傷や色つやも、その子だけの記録として大切に扱います。</p>
       </div>
     </div>
   </section>
-  <section id="works" class="dark">
+
+  <section id="works">
     <div class="wrap">
-      <h2>池戸かばん工房のランドセルリメイク</h2>
-      <div class="grid three">
-        <div class="card"><div class="card-body"><span class="badge">01</span><h3>ランドセルらしさを残す</h3><p>かぶせ・金具・ステッチなど、思い出として残したい部分を活かします。</p></div></div>
-        <div class="card"><div class="card-body"><span class="badge">02</span><h3>大人が使える形にする</h3><p>見た目だけでなく、長財布・スマホが入る実用性を考えて仕立てます。</p></div></div>
-        <div class="card"><div class="card-body"><span class="badge">03</span><h3>一点ずつ相談制作</h3><p>革の状態を確認し、作れる形・価格・金具交換まで正直にご提案します。</p></div></div>
+      <p class="kicker">WORKS</p>
+      <h2>制作事例</h2>
+      <p class="lead">元のランドセルの面影を残しながら、普段使いしやすいバッグへ仕立て直します。</p>
+      <div class="gallery">
+        <div class="item"><img src="before.jpg" alt="リメイク前のランドセル"><p>Before｜6年間をともにしたランドセル</p></div>
+        <div class="item"><img src="after.jpg" alt="リメイク後の革バッグ"><p>After｜大人が持てる革バッグへ</p></div>
+        <div class="item"><img src="wearing.jpg" alt="肩に掛けたランドセルリメイクバッグ"><p>使用感｜実際に肩掛けした姿</p></div>
+        <div class="item"><img src="open.jpg" alt="開いたランドセルリメイクバッグ"><p>内側｜思い出の面影を残す</p></div>
+        <div class="item"><img src="front.jpg" alt="正面のランドセルリメイクバッグ"><p>正面｜金具と表情を活かす</p></div>
+        <div class="item"><img src="detail.jpg" alt="ランドセルのフタのディテール"><p>革の記録｜傷や艶も味わいに</p></div>
       </div>
     </div>
   </section>
-  <section id="price">
+
+  <section class="dark">
     <div class="wrap">
+      <p class="kicker">PRICE</p>
       <h2>参考価格</h2>
-      <p class="lead">革の状態・仕様・金具交換の有無により価格は変わります。</p>
-      <div class="grid three" style="margin-top:24px">
-        <div class="card"><div class="card-body"><h3>ショルダーバッグ</h3><p class="price">45,000円〜</p><p class="note">普段使いしやすい定番。</p></div></div>
-        <div class="card"><div class="card-body"><h3>セカンドバッグ</h3><p class="price">55,000円〜</p><p class="note">親への贈り物にも。</p></div></div>
-        <div class="card"><div class="card-body"><h3>トートバッグ</h3><p class="price">65,000円〜</p><p class="note">仕様によりご相談。</p></div></div>
+      <p class="lead">革の状態・仕様・金具交換の有無によりお見積りいたします。</p>
+      <div class="pricebox">
+        <div><h3>ランドセルリメイクバッグ</h3><p class="lead">ショルダー・セカンドバッグ・トートなど、形に合わせてご提案します。</p></div>
+        <p class="price">45,000円〜</p>
       </div>
-      <p class="small" style="margin-top:16px">※状態によっては制作できない形もあります。まずは写真で確認します。</p>
     </div>
   </section>
-  <section id="flow" class="dark">
-    <div class="wrap narrow">
+
+  <section id="flow">
+    <div class="wrap">
+      <p class="kicker">FLOW</p>
       <h2>ご注文の流れ</h2>
-      <div class="grid" style="margin-top:24px">
-        <div class="step"><h3>写真を送る</h3><p class="lead">ランドセルの正面・横・背面・傷みのある部分を送ってください。</p></div>
-        <div class="step"><h3>作れる形を相談</h3><p class="lead">革の状態を見て、バッグの形・金具・価格をご提案します。</p></div>
-        <div class="step"><h3>一点ずつ制作</h3><p class="lead">思い出を活かしながら、長く使える形に仕立てます。</p></div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><strong>相談</strong><br>Instagramまたは電話でご相談</div>
+        <div class="step"><div class="num">02</div><strong>写真確認</strong><br>ランドセルの状態を確認</div>
+        <div class="step"><div class="num">03</div><strong>提案</strong><br>形・仕様・価格をご提案</div>
+        <div class="step"><div class="num">04</div><strong>制作</strong><br>一点ずつ制作</div>
+        <div class="step"><div class="num">05</div><strong>完成</strong><br>完成・お渡し</div>
       </div>
     </div>
   </section>
-  <section>
-    <div class="wrap narrow center">
-      <span class="badge">ABOUT</span>
-      <h2>親の代から受け継いだ、かばん作り。</h2>
-      <p class="lead">池戸かばん工房は岐阜県多治見市の小さな工房です。派手さよりも、長く使えること。思い出を大切にしながら、修理のことまで考えて仕立てます。</p>
-    </div>
-  </section>
+
   <section id="contact" class="cta">
-    <div class="wrap narrow center">
+    <div class="wrap">
+      <p class="kicker">CONTACT</p>
       <h2>まずは写真を送ってご相談ください。</h2>
-      <p class="lead">ランドセルの状態が分かれば、作れる形をご提案できます。</p>
-      <div class="btns" style="justify-content:center;margin-top:26px"><a class="btn darkbtn" href="https://www.instagram.com/ikedo_kaban_kobo/">Instagramで相談する</a><a class="btn" style="color:#211a14;border-color:#211a14" href="tel:09079197558">電話で相談する</a></div>
+      <p class="lead">ランドセルの状態が分かる写真を送っていただければ、作れる形をご提案します。</p>
+      <div class="btns" style="justify-content:center;margin-top:28px"><a class="btn primary" href="https://www.instagram.com/ikedo_kaban_kobo/">Instagramで相談する</a><a class="btn" href="tel:09079197558">電話で相談する</a></div>
     </div>
   </section>
 </main>
