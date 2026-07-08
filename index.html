@@ -10,70 +10,206 @@
       --paper:#f3eadb;
       --ink:#241a12;
       --muted:#6f6257;
-      --brown:#3a281b;
       --gold:#b88a4b;
       --line:#dfd0bc;
-      --dark:#120f0b;
+      --dark:#100d09;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;line-height:1.9}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+      line-height:1.9;
+    }
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .nav{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;color:white;background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0))}
-    .brand{font-weight:700;letter-spacing:.08em}
+
+    /* ここを修正：固定しない。スクロール中に文字が重ならない */
+    .nav{
+      position:absolute;
+      top:0;left:0;right:0;
+      z-index:10;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 6vw;
+      color:white;
+      background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0));
+    }
+    .brand{font-weight:700;letter-spacing:.08em;font-size:18px}
     .navlinks{display:flex;gap:24px;font-size:14px}
-    .hero{min-height:92vh;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25),rgba(0,0,0,.08)),url("hero-randoseru.jpg") center/cover no-repeat;color:white;display:flex;align-items:center;padding:120px 7vw 70px}
+
+    .hero{
+      min-height:92vh;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.28),rgba(0,0,0,.08)),
+        url("hero-randoseru.jpg") center/cover no-repeat;
+      color:white;
+      display:flex;
+      align-items:center;
+      padding:120px 7vw 70px;
+    }
     .hero-box{max-width:650px}
-    .eyebrow{color:#e3bd77;letter-spacing:.18em;font-size:13px;font-weight:700;margin-bottom:18px}
-    h1{font-size:clamp(42px,7vw,82px);line-height:1.15;margin:0 0 22px;letter-spacing:.05em}
-    .lead{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.9);max-width:720px}
+    .eyebrow{
+      color:#e3bd77;
+      letter-spacing:.18em;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(42px,7vw,82px);
+      line-height:1.15;
+      margin:0 0 22px;
+      letter-spacing:.05em;
+    }
+    h2{
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.35;
+      margin:0 0 24px;
+    }
+    .lead{
+      font-size:clamp(16px,2vw,20px);
+      color:rgba(255,255,255,.9);
+      max-width:720px;
+    }
     .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-    .btn{display:inline-block;padding:12px 24px;border-radius:999px;background:white;color:#23180f;font-weight:700;font-size:14px}
-    .btn.outline{background:transparent;color:white;border:1px solid rgba(255,255,255,.7)}
+    .btn{
+      display:inline-block;
+      padding:12px 24px;
+      border-radius:999px;
+      background:white;
+      color:#23180f;
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn.outline{
+      background:transparent;
+      color:white;
+      border:1px solid rgba(255,255,255,.7);
+    }
+
     section{padding:90px 7vw}
     .wrap{max-width:1120px;margin:auto}
-    .label{color:var(--gold);font-size:13px;letter-spacing:.18em;font-weight:700;margin-bottom:10px}
-    h2{font-size:clamp(28px,4vw,46px);line-height:1.35;margin:0 0 24px}
+    .narrow{max-width:780px;margin:auto}
+    .label{
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.18em;
+      font-weight:700;
+      margin-bottom:10px;
+    }
     .text{color:var(--muted);font-size:17px}
-    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-    .photo{border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(34,20,8,.18);background:#ddd}
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:52px;
+      align-items:center;
+    }
+    .photo{
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 18px 45px rgba(34,20,8,.18);
+      background:#ddd;
+    }
     .photo img{width:100%;height:520px;object-fit:cover}
+
     .dark{background:var(--dark);color:white}
     .dark .text{color:rgba(255,255,255,.72)}
-    .story-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:36px}
-    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden}
-    .card img{width:100%;height:280px;object-fit:cover}
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:22px;
+      margin-top:36px;
+    }
+    .card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .card img{width:100%;height:300px;object-fit:cover}
     .card-body{padding:20px}
-    .card h3{margin:0 0 8px;font-size:20px}
+    .card h3{margin:0 0 8px;font-size:22px}
     .card p{margin:0;color:rgba(255,255,255,.72);font-size:15px}
-    .works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
-    .work{background:white;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(45,30,15,.12)}
-    .work img{width:100%;height:300px;object-fit:cover}
+
+    .works{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:38px;
+    }
+    .work{
+      background:white;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 28px rgba(45,30,15,.12);
+    }
+    .work img{width:100%;height:310px;object-fit:cover}
     .work div{padding:18px}
-    .work h3{margin:0 0 6px}
+    .work h3{margin:0 0 6px;font-size:22px}
     .work p{margin:0;color:var(--muted);font-size:15px}
-    .cta{background:linear-gradient(135deg,#2b1b10,#0e0b08);color:white;text-align:center}
-    .narrow{max-width:780px;margin:auto}
-    .price{font-size:30px;font-weight:700;color:#e3bd77;margin:18px 0}
-    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
-    .step{border:1px solid var(--line);border-radius:14px;padding:18px;background:rgba(255,255,255,.45)}
-    .footer{padding:34px 7vw;text-align:center;background:#0c0907;color:rgba(255,255,255,.65);font-size:13px}
+
+    .cta{
+      background:linear-gradient(135deg,#2b1b10,#0e0b08);
+      color:white;
+      text-align:center;
+    }
+    .price{
+      font-size:clamp(34px,7vw,60px);
+      line-height:1.25;
+      font-weight:700;
+      color:#e3bd77;
+      margin:22px 0;
+    }
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:34px;
+    }
+    .step{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      background:rgba(255,255,255,.45);
+    }
+    .footer{
+      padding:34px 7vw;
+      text-align:center;
+      background:#0c0907;
+      color:rgba(255,255,255,.65);
+      font-size:13px;
+    }
+
     @media(max-width:800px){
-      .nav{padding:16px 5vw}.navlinks{display:none}
-      .hero{min-height:86vh;background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.22)),url("hero-randoseru.jpg") center/cover no-repeat;padding:110px 6vw 50px}
-      section{padding:64px 6vw}.split,.story-grid,.works,.flow{grid-template-columns:1fr}
-      .photo img,.card img,.work img{height:320px}
+      .nav{position:absolute;padding:18px 6vw}
+      .brand{font-size:17px}
+      .navlinks{display:none}
+      .hero{
+        min-height:86vh;
+        background:
+          linear-gradient(180deg,rgba(0,0,0,.64),rgba(0,0,0,.20)),
+          url("hero-randoseru.jpg") center/cover no-repeat;
+        padding:110px 6vw 50px;
+      }
+      section{padding:64px 6vw}
+      .split,.story-grid,.works,.flow{grid-template-columns:1fr}
+      .photo img,.card img,.work img{height:auto;max-height:none}
       h1{font-size:44px}
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="brand">池戸かばん工房</div>
     <nav class="navlinks">
       <a href="#concept">想い</a>
-      <a href="#remake">ランドセルリメイク</a>
+      <a href="#remake">リメイク</a>
       <a href="#works">制作事例</a>
       <a href="#contact">相談</a>
     </nav>
@@ -99,7 +235,7 @@
           <h2>ただ小物に分けるだけでなく、<br>使う形に仕立て直す。</h2>
           <p class="text">ランドセルには、卒業までの時間、家族の思い、毎日の記憶が残っています。池戸かばん工房では、その革の表情を活かしながら、これからも持ち歩けるバッグや革小物へ仕立てます。</p>
         </div>
-        <div class="photo"><img src="before.jpg" alt="ランドセル"></div>
+        <div class="photo"><img src="randoseru_before.jpg" alt="お預かりしたランドセル"></div>
       </div>
     </section>
 
@@ -108,10 +244,29 @@
         <div class="label">RANDOSERU REMAKE</div>
         <h2>元のランドセルの面影を残し、<br>普段使いできる形へ。</h2>
         <p class="text">かぶせ、ステッチ、金具、革の傷。思い出の残る部分をできるだけ活かしながら、肩にかけられるバッグや、長く使える革小物へ作り替えます。</p>
+
         <div class="story-grid">
-          <div class="card"><img src="randoseru_before.jpg" alt="リメイク前のランドセル"><div class="card-body"><h3>Before</h3><p>6年間使ったランドセルをお預かりします。</p></div></div>
-          <div class="card"><img src="front.jpg" alt="完成したバッグ"><div class="card-body"><h3>After</h3><p>思い出を残しながら、使える形へ。</p></div></div>
-          <div class="card"><img src="detail.jpg" alt="細部の仕立て"><div class="card-body"><h3>Detail</h3><p>ステッチや金具も、雰囲気を見ながら仕立てます。</p></div></div>
+          <div class="card">
+            <img src="randoseru_before.jpg" alt="お預かりしたランドセル">
+            <div class="card-body">
+              <h3>お預かりしたランドセル</h3>
+              <p>6年間使ったランドセルの状態を確認します。</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="after.jpg" alt="リメイク完成品">
+            <div class="card-body">
+              <h3>リメイク完成品</h3>
+              <p>思い出を残しながら、使えるバッグへ。</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="detail.jpg" alt="金具とステッチ">
+            <div class="card-body">
+              <h3>金具とステッチ</h3>
+              <p>元の雰囲気を見ながら、細部まで仕立てます。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -120,14 +275,56 @@
       <div class="wrap">
         <div class="label">WORKS</div>
         <h2>制作事例</h2>
-        <p class="text">ランドセルリメイクを中心に、革かばん・革小物も一点ずつ制作しています。</p>
+        <p class="text">写真と説明が合うように整理しました。ランドセルリメイクと、制作の手仕事が伝わる構成です。</p>
+
         <div class="works">
-          <div class="work"><img src="after.jpg" alt="ランドセルリメイク完成品"><div><h3>ランドセルリメイク</h3><p>思い出を残したショルダーバッグ。</p></div></div>
-          <div class="work"><img src="black_shoulder.jpg" alt="黒いショルダーバッグ"><div><h3>革ショルダー</h3><p>長く使えるシンプルな黒革バッグ。</p></div></div>
-          <div class="work"><img src="hands-sewing.jpg" alt="手仕事の様子"><div><h3>手仕事</h3><p>親の代から受け継いだ技術で仕立てます。</p></div></div>
-          <div class="work"><img src="open.jpg" alt="バッグの内側"><div><h3>使いやすさ</h3><p>見た目だけでなく、毎日使いやすい形へ。</p></div></div>
-          <div class="work"><img src="skiving.jpg" alt="革漉き作業"><div><h3>革漉き</h3><p>厚みを整え、きれいに仕立てます。</p></div></div>
-          <div class="work"><img src="workshop.jpg" alt="工房"><div><h3>工房</h3><p>岐阜県多治見市の小さな工房です。</p></div></div>
+          <div class="work">
+            <img src="front.jpg" alt="ランドセルリメイクの正面">
+            <div>
+              <h3>ランドセルリメイク</h3>
+              <p>かぶせの表情を活かしたショルダーバッグ。</p>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="wearing.jpg" alt="使用イメージ">
+            <div>
+              <h3>使用イメージ</h3>
+              <p>肩にかけて使える、普段使いの形へ。</p>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="hands-sewing.jpg" alt="ミシン縫製">
+            <div>
+              <h3>ミシン縫製</h3>
+              <p>親の代から受け継いだ技術で仕立てます。</p>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="open.jpg" alt="内側の作り">
+            <div>
+              <h3>内側の作り</h3>
+              <p>見た目だけでなく、毎日使いやすい形へ。</p>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="skiving.jpg" alt="革漉き">
+            <div>
+              <h3>革漉き</h3>
+              <p>厚みを整え、きれいに仕立てます。</p>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="workshop.jpg" alt="工房">
+            <div>
+              <h3>工房</h3>
+              <p>岐阜県多治見市の小さな工房です。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -137,7 +334,7 @@
         <div class="label">PRICE</div>
         <h2>価格について</h2>
         <p class="text">ランドセルの状態、仕様、金具交換の有無により制作前にお見積りします。</p>
-        <div class="price">目安 30,000円〜40,000円</div>
+        <div class="price">参考価格<br>30,000〜40,000円</div>
         <p class="text">まずは写真を送ってご相談ください。</p>
       </div>
     </section>
@@ -160,7 +357,9 @@
         <div class="label">CONTACT</div>
         <h2>まずは写真を送ってご相談ください。</h2>
         <p class="text">ランドセルの状態が分かる写真を送っていただければ、作れる形をご提案します。</p>
-        <div class="buttons"><a class="btn" href="https://www.instagram.com/ikedo_kaban_kobo/" target="_blank">Instagramで相談する</a></div>
+        <div class="buttons">
+          <a class="btn" href="https://www.instagram.com/ikedo_kaban_kobo/" target="_blank">Instagramで相談する</a>
+        </div>
       </div>
     </section>
   </main>
@@ -171,4 +370,3 @@
   </footer>
 </body>
 </html>
-
