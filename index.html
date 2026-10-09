@@ -136,6 +136,23 @@
     .card h3{margin:0 0 8px;font-size:22px}
     .card p{margin:0;color:rgba(255,255,255,.72);font-size:15px}
 
+    .case-pair{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+      margin-top:32px;
+    }
+    .case-pair figure{
+      margin:0;
+      background:white;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 28px rgba(45,30,15,.12);
+    }
+    .case-pair img{display:block;width:100%;height:440px;object-fit:cover}
+    .case-pair figcaption{padding:16px 18px;font-size:15px;color:var(--muted)}
+    .case-pair strong{display:block;color:var(--ink);font-size:20px;margin-bottom:4px}
+    .case-note{margin:18px 0 0;line-height:1.8;color:var(--muted)}
     .works{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -215,6 +232,8 @@
       }
       section{padding:64px 6vw}
       .split,.story-grid,.works,.flow{grid-template-columns:1fr}
+      .case-pair{grid-template-columns:1fr}
+      .case-pair img{height:auto;max-height:520px;object-fit:contain;background:#f4f0e9}
       .photo img,.card img,.work img{height:auto;max-height:none}
       h1{font-size:44px}
       .precheck .condition{grid-template-columns:1fr;gap:4px}
@@ -344,6 +363,18 @@
         <div class="label">WORKS</div>
         <h2>制作事例</h2>
         <p class="text">ランドセルリメイクから革製品の製作まで、池戸かばん工房の手仕事をご紹介します。</p>
+
+        <div class="case-pair" aria-label="茶色のランドセルのリメイク前と完成後">
+          <figure>
+            <img src="brown-randoseru-before.jpeg" alt="リメイク前の茶色のランドセル。かぶせに縁取りとハートの金具がある" loading="lazy">
+            <figcaption><strong>Before｜お預かりしたランドセル</strong>かぶせの模様や金具に、使ってきた時間が残っています。</figcaption>
+          </figure>
+          <figure>
+            <img src="brown-shoulder-after.jpeg" alt="リメイク後。茶色のランドセルを肩掛けできるバッグとして使う様子" loading="lazy">
+            <figcaption><strong>After｜ショルダーバッグへ</strong>ランドセルの面影を活かし、肩にかけて持ち歩ける形に。</figcaption>
+          </figure>
+        </div>
+        <p class="case-note">同じランドセルの、リメイク前と完成後です。仕立てられる形は素材の状態によって異なります。</p>
 
         <div class="works">
           <div class="work">
