@@ -185,6 +185,23 @@
       font-size:13px;
     }
 
+
+    .precheck{background:#ebe0ce}
+    .precheck-panel{max-width:780px;margin:30px auto 0;padding:clamp(22px,5vw,38px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(45,30,15,.08)}
+    .precheck fieldset{border:0;border-top:1px solid var(--line);margin:0;padding:20px 0}
+    .precheck legend{font-size:18px;font-weight:700;padding:0 10px 0 0}
+    .precheck .choices{display:flex;flex-wrap:wrap;gap:10px}
+    .precheck .choices label{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fbf8f3}
+    .precheck input{width:18px;height:18px;accent-color:#654329}
+    .precheck input:focus-visible+span,.precheck button:focus-visible,.precheck a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .precheck .condition{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center;margin:14px 0}
+    .precheck .condition-name{font-weight:700}
+    .precheck .note{color:var(--muted);font-size:15px}
+    .precheck .copy-button{border:0;border-radius:999px;padding:13px 24px;background:#302016;color:white;font:inherit;font-weight:700;cursor:pointer}
+    .precheck .result{width:100%;min-height:150px;resize:vertical;margin-top:12px;padding:12px;border:1px solid var(--line);border-radius:8px;font:15px/1.6 sans-serif}
+    .precheck .message{min-height:1.8em;font-size:15px}
+    .precheck .dm-link{display:inline-block;margin-top:14px;padding:12px 24px;border-radius:999px;border:1px solid #302016;font-weight:700}
+
     @media(max-width:800px){
       .nav{position:absolute;padding:18px 6vw}
       .brand{font-size:17px}
@@ -200,6 +217,7 @@
       .split,.story-grid,.works,.flow{grid-template-columns:1fr}
       .photo img,.card img,.work img{height:auto;max-height:none}
       h1{font-size:44px}
+      .precheck .condition{grid-template-columns:1fr;gap:4px}
     }
   </style>
 </head>
@@ -379,6 +397,59 @@
       </div>
     </section>
 
+
+    <section id="precheck" class="precheck">
+      <div class="narrow">
+        <div class="label">BEFORE YOUR CONSULTATION</div>
+        <h2>ランドセルリメイク事前確認</h2>
+        <p class="text">分かる範囲で選んでください。回答をコピーしてInstagramのDMに貼り付け、ランドセルの写真と一緒にお送りください。</p>
+        <div class="precheck-panel">
+          <form id="remake-precheck">
+            <fieldset>
+              <legend>1. ランドセルの素材</legend>
+              <div class="choices">
+                <label><input type="radio" name="material" value="牛革"><span>牛革</span></label>
+                <label><input type="radio" name="material" value="人工皮革"><span>人工皮革</span></label>
+                <label><input type="radio" name="material" value="不明"><span>不明</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>2. 希望する商品</legend>
+              <div class="choices">
+                <label><input type="radio" name="product" value="ショルダーバッグ"><span>ショルダーバッグ</span></label>
+                <label><input type="radio" name="product" value="小物"><span>小物</span></label>
+                <label><input type="radio" name="product" value="相談して決める"><span>相談して決める</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>3. ランドセルの状態</legend>
+              <div class="condition"><span class="condition-name">ひび割れ</span><div class="choices">
+                <label><input type="radio" name="cracks" value="あり"><span>あり</span></label>
+                <label><input type="radio" name="cracks" value="なし"><span>なし</span></label>
+                <label><input type="radio" name="cracks" value="不明"><span>不明</span></label>
+              </div></div>
+              <div class="condition"><span class="condition-name">べたつき</span><div class="choices">
+                <label><input type="radio" name="stickiness" value="あり"><span>あり</span></label>
+                <label><input type="radio" name="stickiness" value="なし"><span>なし</span></label>
+                <label><input type="radio" name="stickiness" value="不明"><span>不明</span></label>
+              </div></div>
+              <div class="condition"><span class="condition-name">表面の剥がれ</span><div class="choices">
+                <label><input type="radio" name="peeling" value="あり"><span>あり</span></label>
+                <label><input type="radio" name="peeling" value="なし"><span>なし</span></label>
+                <label><input type="radio" name="peeling" value="不明"><span>不明</span></label>
+              </div></div>
+            </fieldset>
+            <p class="note">写真は正面・背面・側面と、傷みが気になる部分を撮ってください。残したい模様や金具があればお知らせください。</p>
+            <p><strong>制作できるかどうかの最終判断は、職人が現物を確認した後に行います。</strong></p>
+            <button class="copy-button" type="button" id="copy-precheck">回答をコピーする</button>
+            <p id="precheck-message" class="message" role="status" aria-live="polite"></p>
+            <textarea id="precheck-result" class="result" aria-label="DMに送る回答" readonly hidden></textarea>
+          </form>
+          <a class="dm-link" href="https://ig.me/m/ikedo_kaban_kobo/" target="_blank" rel="noopener noreferrer">InstagramのDMを開く</a>
+        </div>
+      </div>
+    </section>
+
     <section id="price" class="cta">
       <div class="narrow">
         <div class="label">PRICE</div>
@@ -418,8 +489,40 @@
     <p>池戸かばん工房｜岐阜県多治見市</p>
     <p>ランドセルリメイク・革かばん・修理相談</p>
   </footer>
+
+  <script>
+    document.getElementById('copy-precheck').addEventListener('click', async function () {
+      const values = new FormData(document.getElementById('remake-precheck'));
+      const fields = [
+        ['素材', 'material'], ['希望商品', 'product'],
+        ['ひび割れ', 'cracks'], ['べたつき', 'stickiness'], ['表面の剥がれ', 'peeling']
+      ];
+      const message = document.getElementById('precheck-message');
+      const missing = fields.find(([, key]) => !values.get(key));
+      if (missing) {
+        message.textContent = '「' + missing[0] + '」を選んでください。';
+        document.querySelector('#remake-precheck input[name="' + missing[1] + '"]').focus();
+        return;
+      }
+      const answer = '【ランドセルリメイク事前確認】\n' +
+        fields.map(([label, key]) => label + '：' + values.get(key)).join('\n') +
+        '\n写真はこのDMに添付します。';
+      const result = document.getElementById('precheck-result');
+      result.hidden = false;
+      result.value = answer;
+      try {
+        await navigator.clipboard.writeText(answer);
+        message.textContent = 'コピーしました。下の「InstagramのDMを開く」から貼り付け、写真も送ってください。';
+      } catch (_) {
+        result.focus();
+        result.select();
+        message.textContent = '自動でコピーできませんでした。下の回答文を長押ししてコピーし、DMへ貼り付けてください。';
+      }
+    });
+  </script>
 </body>
   
   
 </html>
+
 
